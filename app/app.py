@@ -68,6 +68,20 @@ if st.button("Predict"):
     shap.plots.beeswarm(shap_values[..., 1], show=False)
     st.pyplot(plt.gcf())
     
+    model_choice = st.selectbox("Choose a model to select",["Random Forest", "XGBoost", "Logicstic Regression"])
+    
+    model_map = {
+        "Random Forest" : "rf_model.pkl",
+        "XGBoost" : "xgb_model.pkl",
+        "Logicstic Regression" : "log_model.pkl"
+    }
+    model_file = os.path.join(base_path, f"../models/{model_map[model_choice]}")
+    model = joblib.load(model_file)
+    
+    model_scores = joblib.load(os.path.join(base_path, "../models/model_scores.pkl"))
+    
+    st.subheader("Model Performance Summary")
+    st.dataframe(model_scores.style.highlight_max(axis=0))
     
 
 
