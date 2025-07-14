@@ -12,7 +12,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.markdown("Smart Heakth Predictor")
+st.markdown("Smart Health Predictor")
 st.markdown("This is a web application that predicts diabetes based on patient details using machine learning models.")
 st.markdown("---")
 
