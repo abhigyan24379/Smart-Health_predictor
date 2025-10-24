@@ -8,7 +8,7 @@ import os
 
 # page setup 
 st.set_page_config(
-    page_title="Smart Health predictor ", 
+    page_title="Smart Health predictor- Under the guidence of Dr. Pallabh Banerjee", 
     layout="wide"
 )
 
